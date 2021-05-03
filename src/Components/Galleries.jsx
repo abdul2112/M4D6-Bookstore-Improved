@@ -1,6 +1,7 @@
 import '../../src/MovieContainer.css';
 import { Container, Col, Row, Spinner, Alert } from 'react-bootstrap';
 import { Component } from 'react'
+import ContentLoader from 'react-content-loader'
 
 const API = "http://www.omdbapi.com/"
 const APIKEY = "c71a553d"
@@ -42,7 +43,7 @@ class Galleries extends Component {
             <>
                 {
                     this.state.isLoading &&
-                    <Spinner animation="border" variant="primary" />
+                    <ContentLoader />
                 }
                 {
                     !this.state.isLoading && this.state.isError &&

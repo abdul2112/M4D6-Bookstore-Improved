@@ -1,6 +1,7 @@
 import '../../src/MovieContainer.css';
 import { Container, Col, Row, Spinner, Alert,Form } from 'react-bootstrap';
 import { Component } from 'react'
+import ContentLoader from 'react-content-loader'
 
 const API = "http://www.omdbapi.com/"
 const APIKEY = "c71a553d"
@@ -56,7 +57,7 @@ class MovieContainer extends Component {
             </Container>
                 {
                     this.state.isLoading &&
-                    <Spinner animation="border" variant="primary" />
+                    <ContentLoader />
                 }
                 {
                     !this.state.isLoading && this.state.isError &&
